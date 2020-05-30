@@ -44,4 +44,16 @@ func main() {
 		m3[string(v)]++
 	}
 	fmt.Println(m3)
+
+	// 回文判断
+	w2 := "AAA" // 需要测试偶数和奇数，比如，AAA 和AAAA
+	l2 := len(w2) - 1
+	halfL2 := int(l2 / 2)
+	for i := 0; i < halfL2; i++ {
+		if w2[i] != w2[l2-i] {
+			fmt.Println("不是回文")
+			return
+		}
+	}
+
 }

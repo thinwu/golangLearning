@@ -5,19 +5,19 @@ import "fmt"
 func main() {
 	a1 := []int{1, 3, 5} // 切片
 	a2 := a1
-	var a3 []int // nil, 没有内存不能copy
+	var a3 []int // 没有初始化，nil, 没有内存不能copy
 	copy(a3, a1)
-	fmt.Println(a1, a2, a3)
+	fmt.Println(a1, a2, a3) //a3 还是nil
 
-	a3 = make([]int, 3, 3)
-	copy(a3, a1) // 创建了一个新的低层数组
+	a3 = make([]int, 3, 3) // 长度不是0， 初始化过了。copy不会自动扩容，长度要够。
+	copy(a3, a1)           // 创建了一个新的低层数组
 	fmt.Println(a1, a2, a3)
 	a1[0] = 100
 	fmt.Println(a1, a2, a3)
 
 	// del
 
-	a1 = append(a1[:1], a1[2:]...) // append([100],[5])
+	a1 = append(a1[:1], a1[2:]...) // 从索引2 位置拆开 到值类型，append([100],[5])
 	fmt.Println(a1)
 	fmt.Println(cap(a1))
 
