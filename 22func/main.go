@@ -32,6 +32,12 @@ func f4(x int, y int) (ret int) {
 	return // 使用命名返回值可以直接使用return， 后面省略
 }
 
+func f8(x, y int) (sum, sub int) {
+	sum = x + y
+	sub = x - y
+	return
+}
+
 // 多个返回值
 func f5() (int, string) {
 	return 1, "shake"
