@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	s1 := make([]int, 5, 10)
+	s1 := make([]int, 5, 10) // make 创建的slice 会被分配内存
 	s2 := make([]int, 5)
 	fmt.Printf("s1=%v, len(s1):%d, cap(s1):%d\n", s1, len(s1), cap(s1))
 	fmt.Printf("s2=%v, len(s2):%d, cap(s2):%d\n", s2, len(s2), cap(s2))

@@ -4,6 +4,7 @@ import "fmt"
 
 func main() {
 	// 定义切片
+	// var 创建的slice不分配内存。类型的0值 引用类型为nil
 	var s1 []int    // defint an int type slice
 	var s2 []string // define an string type slice
 	fmt.Println(s1, s2)
