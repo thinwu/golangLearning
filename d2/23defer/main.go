@@ -51,6 +51,13 @@ func f5() (x int) {
 	}(&x)
 	return 5
 }
+
+func calc(index string, a, b int) int {
+	ret := a + b
+	fmt.Println(index, a, b, ret)
+	return ret
+}
+
 func main() {
 	deferDemo()
 	fmt.Println(f1())
@@ -58,4 +65,23 @@ func main() {
 	fmt.Println(f3())
 	fmt.Println(f4()) // 5
 	fmt.Println(f5()) // 6
+
+	a := 1
+	b := 2
+	// 1. 先执行 calc("10", a, b) = 3
+	// 入参参数copy
+	// defer calc（“1”， 1， 3）
+	defer calc("1", a, calc("10", a, b)) // 4. 2nd defer
+	a = 0
+	//2. 在执行 calc("20", a, b) = 2
+	// 入参参数copy  defer calc（“2”，0， 2）
+	defer calc("2", a, calc("20", a, b)) // 3. 1st defer
+	b = 1
 }
+
+// 10， 1， 2， 3
+// a = 0
+// 20， 0， 2， 2
+// b = 1
+// 2， 0，2，2
+// 1，1， 3，4
