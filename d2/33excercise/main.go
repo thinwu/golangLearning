@@ -1,5 +1,4 @@
-/*
-	50枚金币，分给：Mattew, Sarah, Augustus, Heidi, Emilie, Peter, Giana, Adriano, Aaron, Elizabeth
+/*50枚金币，分给：Mattew, Sarah, Augustus, Heidi, Emilie, Peter, Giana, Adriano, Aaron, Elizabeth
 	分配规则如下：
 	名字中每包含1个e 或者E 分1枚
 	名字中每包含1个i 或者I 分2枚
