@@ -45,11 +45,17 @@ func f4() (x int) {
 	// 所以最后return的返回值还是 传进去之前的x=5
 	// go语言的函数传参都是copy 传参
 }
-
+func f5() (x int) {
+	defer func(x *int) {
+		(*x)++ // 用指针传值，修改的是外部传进来的值，而不是副本。
+	}(&x)
+	return 5
+}
 func main() {
 	deferDemo()
 	fmt.Println(f1())
 	fmt.Println(f2())
 	fmt.Println(f3())
 	fmt.Println(f4()) // 5
+	fmt.Println(f5()) // 6
 }
