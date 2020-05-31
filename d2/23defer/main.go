@@ -29,16 +29,18 @@ func f2() (x int) {
 func f3() (y int) {
 	x := 5
 	defer func() {
-		x++
+		x++ // 修改的是x
 	}()
-	return x // 5. => y = 5
+	return x // 返回值 = y = x = 5. => y = 5
 }
 
 func f4() (x int) {
 	defer func(x int) {
-		x++
+		x++ // 修改的是函数块的x
 	}(x)
-	return 5
+	return 5 // return 之前先赋值x=5，调用defer 传入x = 5， 在函数体内部x++后，内部的x等于6
+	// 但是这个值， 在匿名函数中，没有返回，所以最后return的返回值还是 穿进去之前的x=5
+	// go语言的函数传参都是copy 传参
 }
 
 func main() {
@@ -46,5 +48,5 @@ func main() {
 	fmt.Println(f1())
 	fmt.Println(f2())
 	fmt.Println(f3())
-	fmt.Println(f4())
+	fmt.Println(f4()) // 5
 }
