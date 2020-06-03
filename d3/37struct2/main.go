@@ -27,4 +27,21 @@ func main() {
 	fmt.Printf("%T\n", p2)
 	fmt.Printf("p2=%#v\n", p2) // %+v, %v
 	fmt.Printf("%p\n", p2)
+	(*p2).name = "aa"   // 标准写法取值然后取属性
+	p2.gender = "baomi" // 语法糖
+
+	// key- value 初始化
+
+	var p3 = person{
+		name:   "sss",
+		gender: "nan",
+	}
+	fmt.Printf("%#v\n", p3)
+
+	// 使用值列表初始化，必须按结构体定义的顺序
+	p4 := person{
+		"Name",
+		"Male",
+	}
+	fmt.Printf("%#v\n", p4)
 }

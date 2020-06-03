@@ -9,6 +9,9 @@ func main() {
 	fmt.Println(&n)
 	p := &n
 	fmt.Printf("%T\n", p)
+	fmt.Printf("&n=%p\n", &n) // n的内存地址
+	fmt.Printf("p=%p\n", p)   // p这个指针的值，就是n的地址
+	fmt.Printf("&p=%p\n", &p) // p的地址
 	m := *p
 	fmt.Println(m)
 	fmt.Printf("%T\n", m)
