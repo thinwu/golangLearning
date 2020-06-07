@@ -108,5 +108,5 @@ func main() {
 		CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build
 		CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build
 	*/
-	// go run main.go => 不编译直接执行。用于快速测试小文件。不推荐。
+	// go run main.go => 编译在临时文件夹，再执行。
 }
