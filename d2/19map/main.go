@@ -8,6 +8,13 @@ func main() {
 	m1["理想"] = 18
 	m1["Daniel"] = 37
 	fmt.Println(m1)
+
+	// map 键值对初始化， 不带容量估算
+	// m1 ：=map[string]int{
+	// 	"stu1":100,
+	// 	"stu2":200,
+	// 	"stu3":300,
+	// }
 	v, ok := m1["Cyrus"] // ok, bool. v value
 	if !ok {
 		fmt.Println("查无此key")

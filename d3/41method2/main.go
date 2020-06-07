@@ -11,6 +11,11 @@ func (m myInt) hello() {
 }
 
 func main() {
-	m := myInt(100)
+	m := myInt(100) // 类型强制转换
+	// 1. var m myInt = 100
+	// 2. var m myInt
+	// m = 100
+	// 3. m := myInt(100)
+	// 4. var m = myInt(100)
 	m.hello()
 }

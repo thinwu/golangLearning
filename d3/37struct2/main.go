@@ -16,6 +16,7 @@ func f2(x *person) {
 	// 具体： 如果x是指针，因为go 是不能对指针操作。所以肯定找的是指针对应的变量
 }
 func main() {
+	// 1. 标准初始化
 	var p person
 	p.gender = "nan"
 	p.name = "zhouling"
@@ -30,7 +31,7 @@ func main() {
 	(*p2).name = "aa"   // 标准写法取值然后取属性
 	p2.gender = "baomi" // 语法糖
 
-	// key- value 初始化
+	// 2. 键值对初始化
 
 	var p3 = person{
 		name:   "sss",
@@ -38,7 +39,7 @@ func main() {
 	}
 	fmt.Printf("%#v\n", p3)
 
-	// 使用值列表初始化，必须按结构体定义的顺序
+	// 3. 使用值列表初始化，必须按结构体定义的顺序
 	p4 := person{
 		"Name",
 		"Male",
