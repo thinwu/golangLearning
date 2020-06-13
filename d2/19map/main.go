@@ -15,7 +15,12 @@ func main() {
 	// 	"stu2":200,
 	// 	"stu3":300,
 	// }
-	v, ok := m1["Cyrus"] // ok, bool. v value
+
+	// ok, bool. v value， 只用一个变量接收的时候，只会返回一个值，没有找到，就用对应类型的零值。
+	// 用两个变量接收，第二个规则上用ok，是一个bool类型。来判读是否取到了。
+
+	v, ok := m1["Cyrus"]
+
 	if !ok {
 		fmt.Println("查无此key")
 	} else {
