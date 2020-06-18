@@ -25,8 +25,8 @@ func (c *cat) eat(food string) {
 
 // interface nesting
 type animal interface {
-	mover
-	eater
+	mover // mover interface
+	eater // eater interface
 }
 
 func main() {
