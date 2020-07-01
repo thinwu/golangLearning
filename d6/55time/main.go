@@ -33,7 +33,16 @@ func main() {
 	timeObj, err := time.Parse("2006-01-02", "2000-08-03")
 	if err != nil {
 		fmt.Printf("convert time error, %v\n", err)
+		return
 	}
 	fmt.Println(timeObj)
 
+	loc, err := time.LoadLocation("Asia/Shanghai")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(loc)
+	t, _ := time.ParseInLocation("2006-01-02 15:04:05", "2020-07-02 15:06:05", loc)
+	fmt.Println(t)
 }
